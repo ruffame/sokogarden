@@ -14,6 +14,7 @@ const Mpesapayment = () => {
     const [loading,setLoading]=useState("")
     const [success,setSuccess]=useState("")
     const [error,setError]=useState("")
+    
 
     // function to handle submit 
     const handlesubmit= async (e) =>{
@@ -23,7 +24,7 @@ const Mpesapayment = () => {
         // envelop 
         const formdata = new FormData()
         formdata.append("phone",phone)
-        formdata.append("amount",product_cost)
+        formdata.append("amount",singleproduct.product_cost)
 
         try {
             const response = await axios.post("https://rufus.alwaysdata.net/api/mpesa_payment",formdata)

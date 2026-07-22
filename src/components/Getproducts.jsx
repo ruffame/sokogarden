@@ -7,7 +7,11 @@ import Carousel from './Carousel'
 
 const Getproducts  = () =>{
 
+
     let navigate = useNavigate()
+    const [loading,setLoading] =useState("")
+    
+    const [error,setError] =useState("")
 
     // declare the states for getting products 
     
@@ -56,6 +60,8 @@ const imagepath = "https://rufus.alwaysdata.net/static/images/"
 
             </div>
             <h1 className="text-secondary">Available Games</h1>
+            <h1>{loading}</h1>
+            <h1 className="text-danger">{error}</h1>
             {/* Carousel*/}
             
             {/* map the products */}
