@@ -8,7 +8,7 @@ const Mpesapayment = () => {
     const imagepath = "https://rufus.alwaysdata.net/static/images/"
     // declare the states here 
     const [phone,setPhone]= useState("")
-    const[product_cost,setProductCost]=useState(singleproduct.product_cost)
+    
 
     // states for posting data 
     const [loading,setLoading]=useState("")

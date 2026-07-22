@@ -9,7 +9,7 @@ const Navbar = () => {
                  {/* <!-- button  --> */}
                   {/* <!-- division containing links  -->// */}
 
-                  <a href="" class="navbar-brand"> <b class="text-success">GAMERS WORLD </b></a>
+                  <a href="/" class="navbar-brand"> <b class="text-success">GAMERS WORLD </b></a>
                   {/* <!-- button  --> */}
                    <button class="navbar-toggler"
                    data-bs-toggle="collapse"

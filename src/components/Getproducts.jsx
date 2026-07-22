@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {useState,useEffect} from 'react'
-import Mpesapayment from './Mpesapayment'
+
 import { useNavigate } from 'react-router-dom'
 import Carousel from './Carousel'
 
@@ -10,9 +10,9 @@ const Getproducts  = () =>{
     let navigate = useNavigate()
 
     // declare the states for getting products 
-    const[loading,setLoading] = useState ("")
+    
     const[products,setProducts] = useState ([])
-    const[error,setError] = useState ("")
+    
     // state for search and load more
     const[search,setSearch]=useState("")
     const[visibleCount,setVisibleCount]=useState(8)
