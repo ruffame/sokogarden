@@ -2,6 +2,9 @@ import axios from 'axios'
 import {useState,useEffect} from 'react'
 import Mpesapayment from './Mpesapayment'
 import { useNavigate } from 'react-router-dom'
+import Carousel from './Carousel'
+
+
 const Getproducts  = () =>{
 
     let navigate = useNavigate()
@@ -10,6 +13,15 @@ const Getproducts  = () =>{
     const[loading,setLoading] = useState ("")
     const[products,setProducts] = useState ([])
     const[error,setError] = useState ("")
+    // state for search and load more
+    const[search,setSearch]=useState("")
+    const[visibleCount,setVisibleCount]=useState(8)
+
+    // ducntion for search 
+    const filtered_products =products.filter((item)=>
+    item.product_name.toLowerCase().includes(search.toLowerCase())||
+item.product_description.toLowerCase().includes(search.toLowerCase())
+);
 
     // function to get products
     const getproducts = async () =>{
@@ -33,10 +45,21 @@ console.log(products);
 // image path 
 const imagepath = "https://rufus.alwaysdata.net/static/images/"
     return(
+
         <div className='row'>
+            {/* carousel  */}
+            <Carousel/>
+            
+            
+            <div className='row justify-content-center mt-3 mb-3'>
+                <input type="search" className='form-control w-50' placeholder='Search game....' value= {search} onChange={(e)=> setSearch(e.target.value)}/>
+
+            </div>
             <h1 className="text-secondary">Available Games</h1>
+            {/* Carousel*/}
+            
             {/* map the products */}
-            {products.map(singleproduct=>(
+            {filtered_products.slice(0,visibleCount).map(singleproduct=>(
                 
             <div className='col-md-3 p-3 mb-5'>
                 <div className='card shadow p-2'>
@@ -51,7 +74,16 @@ const imagepath = "https://rufus.alwaysdata.net/static/images/"
                     </div>
                 </div>
             </div>
-            ))}
+            ))} <br />
+            <div className='text-center mt-3'>
+                {visibleCount< filtered_products.length && (
+                    <button 
+                    className='btn btn-primary' 
+                    onClick={()=> setVisibleCount(visibleCount+8)}>
+                        Load More
+                    </button>
+                )}
+            </div>
         </div>
     )
 }

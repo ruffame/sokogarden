@@ -14,6 +14,8 @@ const Signup= ()=> {
     const[success,setSuccess]=useState("")
     const[loading,setLoading]=useState("")
     const[error,setError]=useState("")
+    // state for hide/show password 
+    const[showPassword,setShowPassword]=useState(false)
 
     // function to sign up /
     const handlesubmit = async (e) => {
@@ -54,7 +56,18 @@ const Signup= ()=> {
                 <form action="" onSubmit={handlesubmit}>
                     <input type="text" className="form-control" placeholder="Enter Username"   onChange={(e)=> setUsername(e.target.value)}/> <br />
                     <input type="email" className="form-control" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} /> <br />
-                    <input type="password" className="form-control" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} /> <br />
+                    {/* <input type="password" className="form-control" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} /> <br /> */}
+                    <div className='input-group' >
+                        <input type= {showPassword ? "text" :"password" }  
+                        className='form-control'
+                        placeholder='Enter password'
+                        onChange={(e)=> setPassword(e.target.value)}/>
+                        <span className='input-group-text' style={{cursor:"pointer"}} onClick={()=> setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? "🔒":"👁"}
+
+                        </span> <br /> 
+                    </div> <br />
                     <input type="tel" className="form-control" placeholder="Enter Phone" onChange={(e)=> setPhone(e.target.value)} /> <br />
                     <button className="w-100 btn btn-info">SignUp</button> <br />
                     <p>Already have an account?  <Link to="/signin" > Sign in</Link> </p>

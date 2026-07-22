@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import './App.css';
@@ -7,13 +8,19 @@ import Getproducts from './components/Getproducts';
 import Addproduct from './components/Addproduct';
 import Mpesapayment from './components/Mpesapayment';
 import Signin from './components/Signin';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
       <BrowserRouter>
       <div className="App">
-        <header className="bg-danger">
+        {/* navbar  */}
+        <Navbar/>
+
+        <header className="bg-info">
           <h1>Welcome to Sokogarden</h1>
+
         </header>
         {/* navigations  */}
         <nav>
@@ -28,11 +35,13 @@ function App() {
           <Route path='/signup' element={<Signup/>} />
           <Route path='/signin' element={<Signin/>} />
           <Route path='/' element={<Getproducts/>} />
-          <Route path='/Addproducts' element={<Addproduct/>} />
+          <Route path='/Addproduct' element={<Addproduct/>} />
           <Route path='/mpesa' element={<Mpesapayment/>} />
           
           
-        </Routes>
+        </Routes>  <br />
+        {/* footer  */}
+        <Footer/>
     </div>
     </BrowserRouter>
   );

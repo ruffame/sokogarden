@@ -9,6 +9,7 @@ const Signin= ()=> {
     const [loading,setLoading] = useState("")
     const [success,setSuccess] = useState("")
     const [error,setError] = useState("")
+    const[showPassword,setShowPassword]=useState(false)
 
     // function handle submit 
     const handlesubmit =async (e) => {
@@ -47,7 +48,18 @@ const Signin= ()=> {
                 <h1 className="text-danger">{error}</h1>
                 <form action="" onSubmit={handlesubmit}>
                     <input type="email" className="form-control" placeholder="Email" onChange={(e)=> setEmail(e.target.value)}/> <br />
-                    <input type="password" className="form-control" placeholder="password" onChange={(e) => setPassword(e.target.value)} /> <br />
+                    {/* <input type="password" className="form-control" placeholder="password" onChange={(e) => setPassword(e.target.value)} /> <br /> */}
+                    <div className='input-group' >
+                        <input type= {showPassword ? "text" :"password" }  
+                        className='form-control'
+                        placeholder='Enter password'
+                        onChange={(e)=> setPassword(e.target.value)}/>
+                        <span className='input-group-text' style={{cursor:"pointer"}} onClick={()=> setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? "🔒":"👁"}
+
+                        </span> <br />
+                    </div>
                     <button className="btn btn-info form-control">Sign in</button>
                     <p>Don't have an account ? <Link to="/signup" >Sign Up</Link>    </p>
                 </form>
