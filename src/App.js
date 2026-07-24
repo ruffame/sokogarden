@@ -10,6 +10,7 @@ import Mpesapayment from './components/Mpesapayment';
 import Signin from './components/Signin';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Videos from './components/Videos';
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
           <Route path='/' element={<Getproducts/>} />
           <Route path='/Addproduct' element={<Addproduct/>} />
           <Route path='/mpesa' element={<Mpesapayment/>} />
-          
+          <Route path='/videos' element={<Videos/>} />
           
         </Routes>  <br />
         {/* footer  */}

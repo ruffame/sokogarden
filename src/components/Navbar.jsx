@@ -24,7 +24,7 @@ const Navbar = () => {
                             <a href="/signin" class="nav-link">signin</a>
                             <a href="/signup" class="nav-link">signup</a>
                             <a href="/addproduct" class="nav-link">addproduct</a>
-                            
+                            <a href='/videos' class="nav-link">Videos</a>
                          
                          </div>
                     </div>
