@@ -7,22 +7,26 @@ const Carousel = () => {
             <div class="carousel slide" data-bs-ride="carousel" id="mycarousel">
                 {/* <!-- division containing images  --> */}
                 <div class="carousel-inner">
-                    {/* <!-- div with image 1  --> */}
                     <div class="carousel-item active text-center bg-dark">
-                        <img src="images/new-grand-theft-auto-v-grand-theft-auto-5-game-wallpaper-preview.jpg" alt="slide1" width="50%"/>
+                        <img src="images/gamer.png" alt="slide1" width="65%"/>
+                    </div>
+                     
+                    {/* <!-- div with image 1  --> */}
+                    <div class="carousel-item  text-center bg-dark">
+                        <img src="images/new-grand-theft-auto-v-grand-theft-auto-5-game-wallpaper-preview.jpg" alt="slide1" width="65%"/>
                     </div>
                     {/* <!-- div with image 2  --> */}
                     <div class="carousel-item bg-dark">
-                        <img src="images/cod cold war.jpeg" alt="slide2" width="28%"/>
+                        <img src="images/cod cold war.jpeg" alt="slide2" width="40%"/>
                     </div>
                     {/* <!-- div with image 3  --> */}
                     <div class="carousel-item bg-dark">
-                        <img src="images/long3.webp" ALT="SLIDE 3" width="45%"/>
+                        <img src="images/long3.webp" ALT="SLIDE 3" width="66%"/>
 
                     </div>
                     {/* <!-- div with image 4  --> */}
                     <div class="carousel-item bg-dark">
-                        <img src="images/carousel3.webp" alt="slide4" width="28%"/>
+                        <img src="images/carousel3.webp" alt="slide4" width="40%"/>
                     </div>
                 </div>
                 {/* <!-- previous conttrol icon  --> */}

@@ -15,22 +15,24 @@ import Videos from './components/Videos';
 function App() {
   return (
       <BrowserRouter>
-      <div className="App">
+      <div className="App bg-dark">
         {/* navbar  */}
-        <Navbar/>
+        
+        <Navbar/> <br />
+        <h1 className="text-success"style={{ fontFamily: "'Grechen Fuemen', cursive" }}>WELCOME TO GAMERS WORLD</h1>
 
-        <header className="bg-info">
-          <h1>Welcome to Sokogarden</h1>
+        <header className="bg-secondary">
+          
 
-        </header>
+        </header> <br />
         {/* navigations  */}
         <nav>
           <Link to="/signup" className='btn btn-outline-info'>Signup</Link>
           <Link to="/signin" className='btn btn-outline-info'>Signin</Link>
-          <Link to="/Addproducts" className='btn btn-outline-info'>Addproduct</Link>
+          <Link to="/Addproduct" className='btn btn-outline-info'>Addproduct</Link>
           <Link to="/" className='btn btn-outline-info'>Getproducts</Link>
          
-        </nav>
+        </nav> <br />
         {/* routes  */}
         <Routes>
           <Route path='/signup' element={<Signup/>} />

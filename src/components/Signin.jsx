@@ -9,6 +9,7 @@ const Signin= ()=> {
     const [loading,setLoading] = useState("")
     const [success,setSuccess] = useState("")
     const [error,setError] = useState("")
+    const[wrongpassword,setWrongPassword]=useState("")
     const[showPassword,setShowPassword]=useState(false)
 
     // function handle submit 
@@ -22,13 +23,17 @@ const Signin= ()=> {
 
         try {
             const response = await axios.post("https://rufus.alwaysdata.net/api/signin",formdata)
-            setSuccess(response.data.message)
+            
             setLoading("")
             // redirct user to get produts page 
             // nb:: upon login successfull
             if(response.data.user){
                 // it means login successful 
+                setSuccess(response.data.message)
+                localStorage.setItem("user",JSON.stringify(response.data.user))
                 navigate("/")
+            }else {
+                setWrongPassword(response.data.message)
             } 
             
         } catch (error) {
@@ -37,6 +42,7 @@ const Signin= ()=> {
             
             
         }
+        
     }
 
     return(
@@ -44,6 +50,7 @@ const Signin= ()=> {
             <div className="col-md-6 card shadow p-3">
                 <h1 className="text-info">Sign In</h1>
                 <h1>{loading}</h1>
+                <h1 className="text-danger">{wrongpassword}</h1>
                 <h1 className="text-success">{success}</h1>
                 <h1 className="text-danger">{error}</h1>
                 <form action="" onSubmit={handlesubmit}>

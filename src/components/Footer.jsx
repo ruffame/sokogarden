@@ -6,7 +6,7 @@ const Footer = () => {
       <section class="row p-3 bg-secondary" >
         {/* <!-- child 1 --> */}
         <div class="col-md-4">
-           <img src="images/gamers.jpg" alt="" width="100%"/>
+           <img src="images/loogo.png" alt="" width="70%"/>
         </div>
         {/* <!-- child 2 --> */}
         <div class="col-md-4">

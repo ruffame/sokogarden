@@ -1,13 +1,24 @@
 import React from 'react'
+import { useState,useEffect } from 'react'
 
 const Navbar = () => {
+   const[user,setUser] =useState(null)
+   useEffect(()=>{
+      const loggedUser=JSON.parse(localStorage.getItem("user"));
+      setUser(loggedUser);
+   },[]);
+   const logout=()=>{
+      localStorage.removeItem("user");
+      setUser(null);
+   }
   return (
      <section class="row">
         <div class="col-md-12">
-            <nav class="navbar navbar-expand-md bg-danger">
+            <nav style={{ fontFamily: "'Poppins', sans-serif" }} class="navbar navbar-expand-md bg-danger p-3">
                 {/* <!-- brand  -->/ */}
                  {/* <!-- button  --> */}
                   {/* <!-- division containing links  -->// */}
+                  
 
                   <a href="/" class="navbar-brand"> <b class="text-success">GAMERS WORLD </b></a>
                   {/* <!-- button  --> */}
@@ -20,14 +31,32 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="collapsenavbar">
                         {/* <!-- left links  --> */}
                          <div class="navbar-nav">
-                            <a href="/" class="nav-link">Home</a>
-                            <a href="/signin" class="nav-link">signin</a>
-                            <a href="/signup" class="nav-link">signup</a>
-                            <a href="/addproduct" class="nav-link">addproduct</a>
-                            <a href='/videos' class="nav-link">Videos</a>
+                            <a href="/" class="nav-link"><h4>Home</h4></a>
+                            
+                            <a href="/addproduct" class="nav-link"><h4>addproduct</h4></a>
+                            <a href='/videos' class="nav-link"><h4>Videos</h4></a> <br />
+                            <a href="https://www.facebook.com" style={{marginLeft:"670px"}}><img src="images/fb.png" alt="" width="40px"/></a>
+                            <a href="https://www.instagram.com" style={{marginLeft:""}}><img src="images/ins.png" alt="" width="40px"/></a>
+                           {user ? (
+                              <>
+                              <span className='nav-link'>Welcome {user.username}</span>
+                              <button onClick={logout} className='btn btn-success'>Logout
+
+                              </button>
+                              
+                              </>
+                            ) : (
+                              <>
+                              <a href='/signin'className='nav-link'>Signin</a>
+                              <a href='/signup'className='nav-link'>SignUp</a>
+                              
+                              </>
+                            ) }
                          
-                         </div>
-                    </div>
+                         </div> <br /> <br />
+                         
+                    </div> <br /> <br />
+                  
             </nav>
         </div>
      </section>

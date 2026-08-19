@@ -37,9 +37,9 @@ const Addproduct= ()=> {
     }
     return(
         
-        <div className="row justify-content-center mt-5 bg-dark" > 
+        <div className="row justify-content-center mt-5 " > 
 
-            <div className="col-md-6 card shadow p-3 bg-dark">
+            <div className="col-md-6 card shadow p-3 ">
                 <h1 className="text-warning">Upload Products</h1> 
                 {/* binding the states */}
                 <h1 className='text-secondary'>{loading}</h1>
