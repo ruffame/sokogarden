@@ -35,7 +35,7 @@ const Navbar = () => {
                             
                             <a href="/addproduct" class="nav-link"><h4>addproduct</h4></a>
                             <a href='/videos' class="nav-link"><h4>Videos</h4></a> <br />
-                            <a href="https://www.facebook.com" style={{marginLeft:"270px"}}><img src="images/fb.png" alt="" width="40px"/></a>
+                            <a href="https://www.facebook.com" style={{marginLeft:"200px"}}><img src="images/fb.png" alt="" width="40px"/></a>
                             <a href="https://www.instagram.com" style={{marginLeft:""}}><img src="images/ins.png" alt="" width="40px"/></a>
                            {user ? (
                               <>
