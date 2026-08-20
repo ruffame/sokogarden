@@ -3,7 +3,10 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-      <section class="row p-3 bg-secondary" >
+      <section class="row p-3 "style={{
+  backgroundColor: "#30243D",
+  color: "#FFFFFF"
+}} >
         {/* <!-- child 1 --> */}
         <div class="col-md-4">
            <img src="images/loogo.png" alt="" width="70%"/>

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {useState,useEffect} from 'react'
-
+import Footer from './Footer'
 import { useNavigate } from 'react-router-dom'
 import Carousel from './Carousel'
 
@@ -49,12 +49,12 @@ const Getproducts  = () =>{
             const response = await axios.get("https://rufus.alwaysdata.net/api/getproducts")
             setProducts(response.data)
             
+            
         } catch (error) {
             setError(error.message)
             setLoading("")
         }
     }
-
 
 // call the function 
  useEffect(()=>{
@@ -104,19 +104,91 @@ const imagepath = "https://rufus.alwaysdata.net/static/images/"
             {/* map the products */}
             {filtered_products.slice(0,visibleCount).map(singleproduct=>(
                 
-            <div className='col-md-3 p-3 mb-5 '>
-                <div className='card shadow p-2 bg-dark '>
-                    {/* image goes here  */}
-                    <img src={imagepath + singleproduct.product_photo} alt="" height={350}/>
-                    <div className='card-body'>
-                        <h2 className='text-success' style={{textDecoration:"overline"}}>{singleproduct.product_name}</h2>
-                        <p>{singleproduct.product_description.slice(0 , 30)}...</p>
-                        <b className='text-warning'>Ksh{singleproduct.product_cost}</b><br />
-                        <span className='badge text-danger p-2'><h4>{singleproduct.product_category}</h4></span> <br /> <br /><br />
-                        <button className='btn btn-outline-success w-100' onClick={()=> navigate("/mpesa" , {state:{singleproduct}})}>Purchase Now</button>
-                    </div>
-                </div>
-            </div>
+           <div className="col-md-3 p-3 mb-5">
+  <div
+    className="card h-100 border-0 shadow"
+    style={{
+      backgroundColor: "#241B2F",
+      borderRadius: "15px",
+      overflow: "hidden",
+      transition: "0.3s"
+    }}
+  >
+    {/* Game Image */}
+    <img
+  src={imagepath + singleproduct.product_photo}
+  alt={singleproduct.product_name}
+  style={{
+    width: "100%",
+    height: "200px",
+    objectFit: "cover"
+  }}
+/>
+
+    <div className="card-body">
+
+      {/* Game Category */}
+      <span
+        className="badge mb-2"
+        style={{
+          backgroundColor: "#A855F7",
+          color: "white"
+        }}
+      >
+        {singleproduct.product_category}
+      </span>
+
+      {/* Game Name */}
+      <h3
+        style={{
+          color: "#00E5FF",
+          fontWeight: "700",
+          marginBottom: "10px"
+        }}
+      >
+        {singleproduct.product_name}
+      </h3>
+
+      {/* Description */}
+      <p
+        style={{
+          color: "#C9C3D1",
+          fontSize: "14px",
+          minHeight: "42px"
+        }}
+      >
+        {singleproduct.product_description.slice(0, 60)}...
+      </p>
+
+      {/* Price */}
+      <h4
+        style={{
+          color: "#FFD700",
+          fontWeight: "bold"
+        }}
+      >
+        Ksh {singleproduct.product_cost}
+      </h4>
+
+      {/* Purchase Button */}
+      <button
+        className="btn w-100 mt-3"
+        style={{
+          border: "2px solid #00E5FF",
+          color: "#00E5FF",
+          borderRadius: "8px",
+          fontWeight: "bold"
+        }}
+        onClick={() =>
+          navigate("/mpesa", { state: { singleproduct } })
+        }
+      >
+        🎮 Purchase Now
+      </button>
+
+    </div>
+  </div>
+</div>
             ))} <br />
             <div className='text-center mt-3'>
                 {visibleCount< filtered_products.length && (
@@ -126,7 +198,8 @@ const imagepath = "https://rufus.alwaysdata.net/static/images/"
                         Load More
                     </button>
                 )}
-            </div>
+            </div> <br />
+            <Footer/>
         </div>
     )
 }
