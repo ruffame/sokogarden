@@ -31,12 +31,13 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="collapsenavbar">
                         {/* <!-- left links  --> */}
                          <div class="navbar-nav">
-                            <a href="/" class="nav-link"><h4>Home</h4></a>
+                            <a href="/" class="nav-link"><img src="images/home.png" alt="" width="30px"/></a>
                             
-                            <a href="/addproduct" class="nav-link"><h4>addproduct</h4></a>
-                            <a href='/videos' class="nav-link"><h4>Videos</h4></a> <br />
-                            <a href="https://www.facebook.com" style={{marginLeft:"270px"}}><img src="images/fb.png" alt="" width="40px"/></a>
-                            <a href="https://www.instagram.com" style={{marginLeft:""}}><img src="images/ins.png" alt="" width="40px"/></a>
+                            <a href="/addproduct" class="nav-link"><img src="images/game.png" alt="" width="30px"/></a>
+                            <a href='/videos' class="nav-link"><img src="images/video.png" alt="" width="30px"/></a> <br />
+                         
+                            <a href="https://www.facebook.com" style={{marginLeft:"850px"}} ><img src="images/fb.png" alt="" width="40px"/></a>
+                            <a href="https://www.instagram.com" ><img src="images/ins.png" alt="" width="40px"/></a>
                            {user ? (
                               <>
                               <span className='nav-link'>Welcome {user.username}</span>
@@ -52,6 +53,7 @@ const Navbar = () => {
                               
                               </>
                             ) }
+                      
                          
                          </div> <br /> <br />
                          

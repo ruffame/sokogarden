@@ -19,7 +19,7 @@ function App() {
         {/* navbar  */}
         
         <Navbar/> <br />
-        <h1 className="text-success"style={{ fontFamily: "'Grechen Fuemen', cursive" }}>WELCOME TO GAMERS WORLD</h1>
+        <h1 className="text-success"style={{ fontFamily: "'Grechen Fuemen', cursive" }}> <b>WELCOME TO GAMERS WORLD</b></h1>
 
         <header className="bg-secondary">
           
