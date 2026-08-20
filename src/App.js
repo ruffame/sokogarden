@@ -26,13 +26,7 @@ function App() {
 
         </header> <br />
         {/* navigations  */}
-        <nav>
-          <Link to="/signup" className='btn btn-outline-info'>Signup</Link>
-          <Link to="/signin" className='btn btn-outline-info'>Signin</Link>
-          <Link to="/Addproduct" className='btn btn-outline-info'>Addproduct</Link>
-          <Link to="/" className='btn btn-outline-info'>Getproducts</Link>
-         
-        </nav> <br />
+        
         {/* routes  */}
         <Routes>
           <Route path='/signup' element={<Signup/>} />
