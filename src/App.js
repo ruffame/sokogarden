@@ -9,7 +9,6 @@ import Addproduct from './components/Addproduct';
 import Mpesapayment from './components/Mpesapayment';
 import Signin from './components/Signin';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import Videos from './components/Videos';
 
 function App() {
