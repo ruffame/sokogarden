@@ -68,7 +68,7 @@ const imagepath = "https://rufus.alwaysdata.net/static/images/"
     return(
 
 
-        <div className='row bg-dark'>
+        <div className='row '>
             {/* carousel  */}
             <Carousel/>
             

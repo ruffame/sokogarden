@@ -15,11 +15,14 @@ import Videos from './components/Videos';
 function App() {
   return (
       <BrowserRouter>
-      <div className="App bg-dark">
+      <div className="App " style={{
+  backgroundColor: "#0D0D0D",
+  color: "#00E5FF"
+}}>
         {/* navbar  */}
         
         <Navbar/> <br />
-        <h1 className="text-success"style={{ fontFamily: "'Grechen Fuemen', cursive" }}> <b>WELCOME TO GAMERS WORLD</b></h1>
+        <h1 className=""style={{ fontFamily: "'Orbitron', sans-serif",color:"#00E5FF",textShadow: "0 0 8px #00E5FF" }}> <b>WELCOME TO GAMERS WORLD</b></h1>
 
         <header className="bg-secondary">
           

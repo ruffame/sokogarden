@@ -13,18 +13,24 @@ const Navbar = () => {
    }
   return (
      <section class="row">
-        <div class="col-md-12">
-            <nav style={{ fontFamily: "'Poppins', sans-serif" }} class="navbar navbar-expand-md bg-danger p-3">
+        <div class="col-md-12 text-center">
+            <nav style={{
+  backgroundColor: "#241B2F",
+  color: "#00E5FF"
+}} class="navbar navbar-expand-md  p-3">
                 {/* <!-- brand  -->/ */}
                  {/* <!-- button  --> */}
                   {/* <!-- division containing links  -->// */}
                   
 
                   <a href="/" class="navbar-brand"> <b style={{
-  fontFamily: "'Grechen Fuemen', cursive",
-  fontSize: "40px",
-  fontWeight: "bold"
-}} class="text-success">GAMERS WORLD </b></a>
+  fontFamily: "'Orbitron', sans-serif",
+  fontSize: "24px",
+  marginLeft:"50px",
+  fontWeight: "800",
+  color: "#00E5FF",
+  textShadow: "0 0 8px #00E5FF"
+}} class="">GAMERS <br /> WORLD </b></a>
                   {/* <!-- button  --> */}
                    <button class="navbar-toggler"
                    data-bs-toggle="collapse"
@@ -35,16 +41,21 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="collapsenavbar">
                         {/* <!-- left links  --> */}
                          <div class="navbar-nav">
-                            <a href="/" class="nav-link"><img src="images/home.png" alt="" width="30px"/></a>
+                            <a href="/" class="nav-link"><img src="images/home.png" alt="" width="40px"/></a>
                             
-                            <a href="/addproduct" class="nav-link"><img src="images/game.png" alt="" width="30px"/></a>
-                            <a href='/videos' class="nav-link"><img src="images/video.png" alt="" width="30px"/></a> <br />
+                            <a href="/addproduct" class="nav-link"><img src="images/game.png" alt="" width="40px"/></a>
+                            <a href='/videos' class="nav-link"><img src="images/video.png" alt="" width="40px"/></a> <br />
                          
                             <a href="https://www.facebook.com" style={{marginLeft:"544px"}} ><img src="images/fb.png" alt="" width="40px"/></a>
                             <a href="https://www.instagram.com" ><img src="images/ins.png" alt="" width="40px"/></a>
                            {user ? (
                               <>
-                              <span className='nav-link'>Welcome {user.username}</span>
+                              <span className='nav-link' style={{
+  color: "#00E5FF",
+  fontFamily: "'Orbitron', sans-serif",
+  fontWeight: "600",
+  fontSize: "16px"
+}}>Welcome {user.username}</span>
                               <button onClick={logout} className='btn btn-success'>Logout
 
                               </button>
@@ -52,8 +63,18 @@ const Navbar = () => {
                               </>
                             ) : (
                               <>
-                              <a href='/signin'className='nav-link'>Signin</a>
-                              <a href='/signup'className='nav-link'>SignUp</a>
+                              <a href='/signin'className='nav-link' style={{
+  color: "#00E5FF",
+  fontFamily: "'Orbitron', sans-serif",
+  fontWeight: "600",
+  fontSize: "16px"
+}}>Signin</a>
+                              <a href='/signup'className='nav-link' style={{
+  color: "#00E5FF",
+  fontFamily: "'Orbitron', sans-serif",
+  fontWeight: "600",
+  fontSize: "16px"
+}}>SignUp</a>
                               
                               </>
                             ) }
