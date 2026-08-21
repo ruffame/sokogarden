@@ -43,9 +43,11 @@ const Getproducts  = () =>{
 
     // function to get products
     const getproducts = async () =>{
-        setLoading("Please wait...")
+        // setLoading("Please wait...")
+
 
         try {
+            setLoading("")
             const response = await axios.get("https://rufus.alwaysdata.net/api/getproducts")
             setProducts(response.data)
             

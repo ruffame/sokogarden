@@ -29,8 +29,8 @@ const Videos = () => {
         {/* child 1  */}
         <div className="col-md-4 mb-4">
           <iframe width="100%" height="315" src="https://www.youtube.com/embed/ztjfwecrY8E?si=WAlBb2YUdjeNR0PE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          <h5 className='mt-2 text-center'>farm Robots</h5>
-          <p className="text-center ">Learn how robots are transforming modern farming</p>
+          <h5 className='mt-2 text-center'>fC 27</h5>
+          <p className="text-center ">Football at it finnest fantastic update of the new season to make football gaming on another new level</p>
         </div>
         {/* child 2  */}
         <div className="col-md-4 mb-4">
