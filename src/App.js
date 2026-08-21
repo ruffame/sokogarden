@@ -21,7 +21,7 @@ function App() {
         {/* navbar  */}
         
         <Navbar/> <br />
-        <h1 className=""style={{ fontFamily: "'Orbitron', sans-serif",color:"#00E5FF",textShadow: "0 0 8px #00E5FF" }}> <b>WELCOME  GAMERS WORLD</b></h1>
+        <h1 className=""style={{ fontFamily: "'Orbitron', sans-serif",color:"#00E5FF",textShadow: "0 0 8px #00E5FF" }}> <b>WELCOME TO GAMERS WORLD</b></h1>
 
         <header className="bg-secondary">
           
