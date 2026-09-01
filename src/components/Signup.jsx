@@ -1,9 +1,10 @@
 import axios from 'axios'
 import {useState} from 'react'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 const Signup= ()=> {
+    let navigate = useNavigate();
     // declare the states here 
     const [username,setUsername]= useState("")
     const [email,setEmail] = useState("")
@@ -16,6 +17,13 @@ const Signup= ()=> {
     const[error,setError]=useState("")
     // state for hide/show password 
     const[showPassword,setShowPassword]=useState(false)
+
+    // function to handle signup with google
+    const google = async () => {
+        window.location.href= "https://rufus.alwaysdata.net/api/google_login"
+        navigate("/")
+
+    }
 
     // function to sign up /
     const handlesubmit = async (e) => {
@@ -71,6 +79,8 @@ const Signup= ()=> {
                     <input type="tel" className="form-control" placeholder="Enter Phone" onChange={(e)=> setPhone(e.target.value)} /> <br />
                     <button className="w-100 btn btn-info">SignUp</button> <br />
                     <p>Already have an account?  <Link to="/signin" > Sign in</Link> </p>
+                    <br /> <br /> 
+                    <button onClick={google} className='btn btn-secondary'>Login with google</button>
 
                 </form>
 
